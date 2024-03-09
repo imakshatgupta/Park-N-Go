@@ -17,6 +17,7 @@ app.use(
 
 const userRoutes = require("./routes/userRoutes");
 const parkSpaceRoutes = require("./routes/parkSpaceRoutes.js");
+const listingsRoutes = require("./routes/listingsRoutes.js");
 
 const PORT = process.env.PORT || 8000;
 dbConnect();
@@ -27,6 +28,7 @@ app.get("/", async (req, res) => {
 
 app.use("/users", userRoutes);
 app.use("/parking", parkSpaceRoutes);
+app.use("/listings", listingsRoutes )
 
 const server = app.listen(PORT, () => {
   console.log(`Server started on port ${PORT}`);
